@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week Count iCal</title>
+</head>
+<body>
+  <p>
+    <label>
+      Name
+      <input name="name" type="input">
+    </label>
+  </p>
+  <p>
+    <label>
+      Start date
+      <input name="date" type="date">
+    </label>
+  </p>
+  <p>
+    <label>
+      Number of months from start
+      <input name="months" type="range" min="0" max="60" value="24" oninput="this.nextElementSibling.value = this.value">
+      <output id="months">24</output>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Number of weeks from start
+      <input name="weeks" type="range" min="0" max="200" value="120" oninput="this.nextElementSibling.value = this.value">
+      <output id="weeks">120</output>
+    </label>
+  </p>
+  <button id="download">
+    Download iCal file
+  </button>
+  <script src="script.js"></script>
+</body>
+</html>
