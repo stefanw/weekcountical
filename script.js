@@ -2,11 +2,11 @@ const downloadButton = document.getElementById('download')
 
 const WEEK = 1000 * 60 * 60 * 24 * 7 
 
-const makeEvent = (d, name, title) => {
+const makeEvent = (d, id, title) => {
   const date = new Date(d).toISOString().replace(/[-:]/g, '').split('T')[0]
   const now = new Date().toISOString().replace(/[-:]/g, '').split('.')[0]
   return `BEGIN:VEVENT
-UID:${date}-${name}@weekcountical.stefanwehrmeyer.com
+UID:${date}-${id}@weekcountical.stefanwehrmeyer.com
 DTSTART;VALUE=DATE:${date}
 DTSTAMP;VALUE=DATE-TIME:${now}
 SUMMARY:${title}
@@ -31,11 +31,11 @@ downloadButton.addEventListener('click', (e) => {
     if (y > 0) {
       d.setFullYear(d.getFullYear() + y)
     }
-    out.push(makeEvent(d, name, `${name} month ${month}`))
+    out.push(makeEvent(d, `month-${name}`, `${name} month ${month}`))
   }
   for (let week = 1; week < weeks; week += 1) {
     let d = timestamp + WEEK * week
-    out.push(makeEvent(d, name, `${name} week ${week}`))
+    out.push(makeEvent(d, `week-${name}`, `${name} week ${week}`))
   }
 
   let calendar = `BEGIN:VCALENDAR
