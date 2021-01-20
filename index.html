@@ -21,16 +21,14 @@
   <p>
     <label>
       Number of months from start
-      <input name="months" type="range" min="0" max="60" value="24" oninput="this.nextElementSibling.value = this.value">
-      <output id="months">24</output>
+      <input name="months" type="number" min="0" value="24">
     </label>
   </p>
 
   <p>
     <label>
       Number of weeks from start
-      <input name="weeks" type="range" min="0" max="200" value="120" oninput="this.nextElementSibling.value = this.value">
-      <output id="weeks">120</output>
+      <input name="weeks" type="number" min="0" value="120">
     </label>
   </p>
   <button id="download">
